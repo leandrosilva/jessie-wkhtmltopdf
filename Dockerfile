@@ -7,4 +7,5 @@ FROM base AS install
 RUN wget -nv https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.jessie_amd64.deb
 RUN dpkg -i wkhtmltox_0.12.5-1.jessie_amd64.deb
 RUN apt-get purge -y --auto-remove wget xz-utils \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	&& rm wkhtmltox_0.12.5-1.jessie_amd64.deb
